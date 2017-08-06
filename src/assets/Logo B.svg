@@ -1,0 +1,18 @@
+<svg width="213" height="288" viewBox="0 0 213 288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Logo B</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1619 -108)">
+<g id="Logo B">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(1619 108)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(213 288 -213 160.953 106.5 -79.7776)">
+<stop offset="0" stop-color="#EBF887"/>
+<stop offset="1" stop-color="#FC9C5D"/>
+</linearGradient>
+<path id="path0_fill" d="M 127.938 0L 0 0L 0 288L 126.555 288C 163.208 288 213 250.951 213 206.913C 211.617 154.485 170.123 140.505 170.123 140.505C 170.123 140.505 205.135 120.932 205.135 82.4854C 205.135 25.8641 157.675 0 127.938 0Z"/>
+</defs>
+</svg>

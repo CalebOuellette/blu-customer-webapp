@@ -1,0 +1,79 @@
+@import './box';
+@import './vars';
+
+.glButtonBase{
+   
+
+    min-height: 30px;
+    color: $black;
+    line-height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+     font-weight: 800;
+     font-size: 15px;
+     transition: box-shadow .2s;
+     user-select: none;  
+     position: relative;
+     left: 0px;
+     top: 0px;
+     text-align: left;
+     border: none;
+     cursor: pointer;
+}
+
+.glButton{
+  @extend .glButtonBase;
+   @extend .boxL ;
+}
+
+.glButtonLR{
+  @extend .glButtonBase;
+   @extend .boxLR ;
+}
+
+.glButton-inverse{
+  @extend .glButton;
+  background-color: $black;
+  color: $white;
+}
+
+.glButton:hover {  
+  box-shadow: $hoverShadow;  
+}
+
+.glButton:active{ 
+  box-shadow: $restShadow;  
+}
+
+.glInput{
+    @extend .boxL;
+    width: 150px;
+    height: 30px;
+    color: $black;
+    line-height: 30px;
+    padding-left: 15px;
+    color: white;
+    outline: none;
+    border: solid white;
+    background-color: transparent;
+    font-weight: 800;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.glInput-inverse{
+  @extend .glInput;
+  color: black;
+  border: solid black;
+
+}
+
+.glVertical{
+    transform: rotate(90deg);
+
+}
+
+.glMini{
+     padding-left: 5px;
+    padding-right: 5px;
+}
