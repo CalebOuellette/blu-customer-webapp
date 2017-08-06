@@ -1,4 +1,22 @@
-<p>
-  product-search works!
-</p>
+<div id="logo">
+  <img src="assets/logo_b_sm.png">
+</div>
+
+<div id="searchBarContain">
+  <div>
+    <div [@searchPosition]="state" id="content">
+      What can we get you today?
+    </div>
+    <input [ngModel]="searchText" (ngModelChange)="onSearch($event)" type="text">
+
+
+  <div id="line">
+  </div>
+
+
+  </div>
+
+
+
+</div>
 <app-cart></app-cart>
