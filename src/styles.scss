@@ -1,17 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-@import "./styles/vars";
-@import "./styles/box";
-@import "./styles/button";
-@import "./styles/text";
-@import "./styles/reset";
-@import "./styles/animations";
-
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
 
 body{
+      font-weight: 300;
       margin: 0;
-       border: 0;
+      border: 0;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
 }
 
+Input{
+      background-color: white;
+      
+}
