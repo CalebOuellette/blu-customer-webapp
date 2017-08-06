@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
-
+import { CartComponent } from './cart/cart.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: ProductSearchComponent},
@@ -26,7 +26,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
