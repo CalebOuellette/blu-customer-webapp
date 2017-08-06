@@ -8,15 +8,8 @@
       What can we get you today?
     </div>
     <input [ngModel]="searchText" (ngModelChange)="onSearch($event)" type="text">
-
-
-  <div id="line">
+    <div *ngIf="state == 'searching'" id="line">
+    </div>
   </div>
-
-
-  </div>
-
-
-
 </div>
 <app-cart></app-cart>
