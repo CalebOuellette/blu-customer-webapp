@@ -15,6 +15,10 @@
       <div id="loading" *ngIf="loading">
         Loading...
       </div>
+
+      <div *ngFor="let product of productList | async">
+        {{product.name}}
+      </div>
     </div>
 
   </div>

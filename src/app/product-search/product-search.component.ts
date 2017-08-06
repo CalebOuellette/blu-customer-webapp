@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import {  AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable  } from 'angularfire2/database';
+import { ProductProps, Product } from '../../../blu-classes';
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
@@ -24,9 +26,20 @@ export class ProductSearchComponent implements OnInit {
   public searchText: string;
   public loading: boolean = false;
 
-  constructor() { }
+
+  public productList
+
+  constructor(public fireDb: AngularFireDatabase,) { }
 
   ngOnInit() {
+
+    this.productList = this.fireDb.list(Product.dbAddress, {
+      query: {
+        orderByChild: 'name',
+        equalTo: this.searchText,
+        limitToFirst: 2
+      }
+    });
   }
 
   onSearch(newModel: string){    
