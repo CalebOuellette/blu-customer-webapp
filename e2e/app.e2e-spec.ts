@@ -1,10 +1,10 @@
-import { BlueCustomerWebappPage } from './app.po';
+import { BluCustomerWebappPage } from './app.po';
 
-describe('blue-customer-webapp App', () => {
-  let page: BlueCustomerWebappPage;
+describe('blu-customer-webapp App', () => {
+  let page: BluCustomerWebappPage;
 
   beforeEach(() => {
-    page = new BlueCustomerWebappPage();
+    page = new BluCustomerWebappPage();
   });
 
   it('should display welcome message', () => {

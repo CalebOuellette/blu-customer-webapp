@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class BlueCustomerWebappPage {
+export class BluCustomerWebappPage {
   navigateTo() {
     return browser.get('/');
   }
