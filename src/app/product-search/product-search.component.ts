@@ -22,7 +22,7 @@ export class ProductSearchComponent implements OnInit {
   public state: string = 'resting';
 
   public searchText: string;
-
+  public loading: boolean = false;
 
   constructor() { }
 
@@ -33,8 +33,10 @@ export class ProductSearchComponent implements OnInit {
     this.searchText = newModel;
     if(!newModel){
       this.state = 'resting';
+      this.loading = false;
     }else{
       this.state = 'searching';
+      this.loading = true;
     }
   }
 

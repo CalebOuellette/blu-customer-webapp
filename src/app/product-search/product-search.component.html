@@ -5,11 +5,18 @@
 <div id="searchBarContain">
   <div>
     <div [@searchPosition]="state" id="content">
-      What can we get you today?
+      <div id="label"> What can we get you today? </div>
     </div>
-    <input [ngModel]="searchText" (ngModelChange)="onSearch($event)" type="text">
-    <div *ngIf="state == 'searching'" id="line">
+    <input id="searchBox" [ngModel]="searchText" (ngModelChange)="onSearch($event)" type="text">
+
+    <div *ngIf="state == 'searching'">
+      <div id="line">
+      </div>
+      <div id="loading" *ngIf="loading">
+        Loading...
+      </div>
     </div>
+
   </div>
 </div>
 <app-cart></app-cart>

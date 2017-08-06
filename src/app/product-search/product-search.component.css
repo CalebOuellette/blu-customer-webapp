@@ -12,15 +12,30 @@
 
 #label{
         text-align: left;
+        font-weight: 500;
+        margin-bottom: 7px;
+
 }
 
 #line{
         margin-top: 14px;
         width: 100%;
-        height: 1px;
+        height: 2px;
         background-color: white;
 }
 
 #content{
         padding-top: 20px;
+}
+
+#searchBox{
+        width: 525px;
+        height: 54px;
+        border-radius: 3px;
+            font-size: 14px;
+}
+
+#loading{
+        text-align: center;
+        margin: 10px;
 }
