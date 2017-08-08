@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductInfoCardComponent } from './product-info-card/product-info-card.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: ProductSearchComponent},
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     ProductSearchComponent,
-    CartComponent
+    CartComponent,
+    ProductInfoCardComponent
   ],
   imports: [
     BrowserModule,

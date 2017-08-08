@@ -46,10 +46,10 @@ export class ProductSearchComponent implements OnInit {
     this.searchText = newModel;
     if(!newModel){
       this.state = 'resting';
-      this.loading = false;
+   //   this.loading = false;
     }else{
       this.state = 'searching';
-      this.loading = true;
+  //    this.loading = true;
     }
   }
 

@@ -17,7 +17,7 @@
       </div>
 
       <div *ngFor="let product of productList | async">
-        {{product.name}}
+        <app-product-info-card [product]="product"></app-product-info-card>
       </div>
     </div>
 
