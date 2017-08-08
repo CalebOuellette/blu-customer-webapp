@@ -1,9 +1,11 @@
 <div class="infoCard">
-  <div>
+  <div id="name">
     {{product.name}}
   </div>
-   {{product.price}}
+  <div id="price">
+    {{product.price  | currency:'USD':true}}
+  </div>
   <div>
-    <button (click)="addItemToCart()">Add to Cart</button>
+    <button id="addButton" (click)="addItemToCart()">Add to Cart</button>
   </div>
 </div>

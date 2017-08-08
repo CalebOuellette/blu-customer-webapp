@@ -2,7 +2,44 @@
     color: black;
     background-color: white;
     width: 300px;
-    font-weight: 500;
     height: 100vh;
   
+}
+
+#title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 4px;
+    font-weight: 400;
+    font-size: 44px;
+    color: #606060;
+} 
+
+.row{
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+#spacer{
+    width: 80%;
+    margin-left: 10%;
+    height: 2px;
+}
+
+.label{
+    width: 150px;
+    text-align: left;
+}
+
+#total{
+    font-weight: 500;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#checkout-btn{
+    width: 250px;
 }

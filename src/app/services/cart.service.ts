@@ -7,8 +7,11 @@ export class CartService {
 
   public orderItems: Array<ProductProps> = [];
 
+  public total: number = 0;
+
   public addProduct(product: ProductProps){
     this.orderItems.push(product);
+    this.total = this.total + Number.parseFloat(product.price);
   }
 
 }
