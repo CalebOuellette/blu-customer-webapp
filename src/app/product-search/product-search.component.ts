@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {  AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable  } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { ProductProps, Product } from '../../../blu-classes';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
@@ -12,7 +17,7 @@ import { ProductProps, Product } from '../../../blu-classes';
         marginTop: '0px'
       })),
       state('resting', style({
-          marginTop: '300px'
+        marginTop: '300px'
       })),
       transition('searching => resting', animate('300ms ease-in')),
       transition('resting => searching', animate('300ms ease-out'))
@@ -29,9 +34,15 @@ export class ProductSearchComponent implements OnInit {
 
   public productList
 
-  constructor(public fireDb: AngularFireDatabase,) { }
+  constructor(public fireDb: AngularFireDatabase,public afAuth: AngularFireAuth, public router: Router) {}
 
   ngOnInit() {
+    this.afAuth.authState.subscribe((user: firebase.User) => {
+      if (!user || user.isAnonymous == true) {
+        this.router.navigate(['/login']); //forward to home
+      }
+    })
+
 
     this.productList = this.fireDb.list(Product.dbAddress, {
       query: {
@@ -42,14 +53,14 @@ export class ProductSearchComponent implements OnInit {
     });
   }
 
-  onSearch(newModel: string){    
+  onSearch(newModel: string) {
     this.searchText = newModel;
-    if(!newModel){
+    if (!newModel) {
       this.state = 'resting';
-   //   this.loading = false;
-    }else{
+      //   this.loading = false;
+    } else {
       this.state = 'searching';
-  //    this.loading = true;
+      //    this.loading = true;
     }
   }
 

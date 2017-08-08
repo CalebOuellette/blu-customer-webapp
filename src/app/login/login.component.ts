@@ -23,6 +23,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe((user: firebase.User)=>{
+      if(user && user.isAnonymous == false){
+        this.router.navigate(['/home']); //forward to home
+      }
+    })
   }
 
 
