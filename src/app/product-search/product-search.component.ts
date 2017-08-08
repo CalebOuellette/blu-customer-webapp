@@ -5,6 +5,7 @@ import { ProductProps, Product } from '../../../blu-classes';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 
 @Component({
@@ -31,10 +32,12 @@ export class ProductSearchComponent implements OnInit {
   public searchText: string;
   public loading: boolean = false;
 
+  public cartShowing: boolean = false;
+
 
   public productList
 
-  constructor(public fireDb: AngularFireDatabase,public afAuth: AngularFireAuth, public router: Router) {}
+  constructor(public fireDb: AngularFireDatabase,public afAuth: AngularFireAuth, public router: Router, public cart: CartService) {}
 
   ngOnInit() {
     this.afAuth.authState.subscribe((user: firebase.User) => {

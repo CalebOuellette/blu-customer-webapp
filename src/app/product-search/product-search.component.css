@@ -7,7 +7,7 @@
 #searchBarContain{
         display: flex;   
         justify-content: center;
-
+        width: 100%;
 }
 
 #label{
@@ -38,4 +38,17 @@
 #loading{
         text-align: center;
         margin: 10px;
+}
+
+#cart{
+        position: fixed;
+    right: -300px;
+}
+
+.cartShowing{
+        right: 0px !important;
+}
+
+.cartShowingSearch{
+       width: calc(100% - 300px) !important;
 }

@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductInfoCardComponent } from './product-info-card/product-info-card.component';
+import { CartService } from './services/cart.service';
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: ProductSearchComponent},
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

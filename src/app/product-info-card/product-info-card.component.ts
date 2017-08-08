@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProductProps } from '../../../blu-classes/product';
+import { CartService } from '../services/cart.service';
 @Component({
   selector: 'app-product-info-card',
   templateUrl: './product-info-card.component.html',
@@ -10,12 +11,12 @@ export class ProductInfoCardComponent {
   @Input() public product: ProductProps;
   public quanity: number = 1;
 
-  constructor() { }
+  constructor(protected cart: CartService) { }
 
   
 
-  addToCart(){
-    
+  addItemToCart(){
+    this.cart.addProduct(this.product);
   }
 
 }
