@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  constructor(protected cart: CartService, protected router: Router) { }
+  constructor(public cart: CartService, public router: Router) { }
 
-  @Input() checkoutBtn: boolean = true;
+  @Input() public checkoutBtn: boolean = true;
 
   ngOnInit() {
   }
