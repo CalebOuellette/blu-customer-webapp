@@ -1,5 +1,6 @@
 <div id="logo">
-  <img src="assets/logo_b_sm.png">
+  <img src="assets/logo_b_sm.png"><br>
+  <button (click)="logout()">logout</button>
 </div>
 <app-cart [ngClass]="{cartShowing : cart.orderItems.length > 0}" id="cart"></app-cart>
 <div id="searchBarContain" [ngClass]="{cartShowingSearch : cart.orderItems.length > 0}">
@@ -20,6 +21,6 @@
         <app-product-info-card [product]="product"></app-product-info-card>
       </div>
     </div>
-
+    
   </div>
 </div>

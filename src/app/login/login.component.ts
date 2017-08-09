@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth, AUTH_PROVIDERS } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 
@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.afAuth.authState.subscribe((user: firebase.User)=>{
-      if(user && user.isAnonymous == false){
+    this.afAuth.authState.subscribe((user: firebase.User) => {
+      if (user && user.isAnonymous == false) {
         this.router.navigate(['/home']); //forward to home
       }
     })
@@ -49,5 +49,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  facebookLogin() {
+    var provider = new firebase.auth.FacebookAuthProvider();
+    this.afAuth.auth.signInWithPopup(provider).then(success => {
+      this.router.navigate(['/home']);
+    }, fail => {
+      this.errorText = "Yikes, something went really really wrong. Try again?";
+    })
+  }
 
 }

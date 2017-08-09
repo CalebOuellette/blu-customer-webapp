@@ -66,4 +66,7 @@ export class ProductSearchComponent implements OnInit {
     }
   }
 
+  logout(){
+    this.afAuth.auth.signOut();
+  }
 }
