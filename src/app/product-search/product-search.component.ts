@@ -49,9 +49,8 @@ export class ProductSearchComponent implements OnInit {
 
     this.productList = this.fireDb.list(Product.dbAddress, {
       query: {
-        orderByChild: 'name',
-        equalTo: this.searchText,
-        limitToFirst: 2
+        orderByChild: 'name',        
+        limitToFirst: 50
       }
     });
   }
