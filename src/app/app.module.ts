@@ -15,9 +15,11 @@ import { ProductSearchComponent } from './product-search/product-search.componen
 import { CartComponent } from './cart/cart.component';
 import { ProductInfoCardComponent } from './product-info-card/product-info-card.component';
 import { CartService } from './services/cart.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'checkout', component: CheckoutComponent},
   {path: 'home', component: ProductSearchComponent},
   {
     path: '',
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     LoginComponent,
     ProductSearchComponent,
     CartComponent,
-    ProductInfoCardComponent
+    ProductInfoCardComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

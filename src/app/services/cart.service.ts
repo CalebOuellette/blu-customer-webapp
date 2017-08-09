@@ -7,7 +7,7 @@ export class CartService {
 
   public orderItems: Array<ProductProps> = [];
 
-  public total: number = 0;
+  public total: number = 3.5;
 
   public addProduct(product: ProductProps){
     this.orderItems.push(product);

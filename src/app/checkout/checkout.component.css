@@ -1,0 +1,25 @@
+#holder{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#contain{
+    width: 500px;
+}
+
+#payment{    
+    width: 500px;
+    background-color: #AAA;
+    padding-left: 30px;
+}
+
+
+#title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 4px;
+    font-weight: 400;
+    font-size: 44px;
+    color: #FFF;
+} 

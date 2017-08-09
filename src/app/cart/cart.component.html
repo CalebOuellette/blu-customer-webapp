@@ -21,6 +21,14 @@
                 {{item.price | currency:'USD':true}}
             </div>
         </div>
+        <div class="row" >
+            <div class="label">
+                Delivery Fee
+            </div>
+            <div class="label">
+                $3.50
+            </div>
+        </div>
     </div>
 
     <div id="total">
@@ -32,8 +40,7 @@
                 {{cart.total | currency:'USD':true}}
             </div>
         </div>
-         <button id="checkout-btn"> Checkout Now</button>
+        <button *ngIf="checkoutBtn" id="checkout-btn" (click)="checkout()"> Checkout Now</button>
     </div>
-   
 
 </div>
