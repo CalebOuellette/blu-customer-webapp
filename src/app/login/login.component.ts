@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password).then(success => {
       this.router.navigate(['/home']);
     }, fail => {
+       console.log(fail);
       this.errorText = "Yikes, something went really really wrong. Try again?";
     })
   }
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
     this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then(success => {
       this.router.navigate(['/home']);
     }, fail => {
+       console.log(fail);
       this.errorText = "Yikes, something went really really wrong. Try again?";
     })
   }
@@ -54,6 +56,7 @@ export class LoginComponent implements OnInit {
     this.afAuth.auth.signInWithPopup(provider).then(success => {
       this.router.navigate(['/home']);
     }, fail => {
+      console.log(fail);
       this.errorText = "Yikes, something went really really wrong. Try again?";
     })
   }
