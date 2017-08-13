@@ -10,12 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ProductSearchComponent } from './product-search/product-search.component';
-import { CartComponent } from './cart/cart.component';
-import { ProductInfoCardComponent } from './product-info-card/product-info-card.component';
+import { LoginComponent } from './views/login/login.component';
+import { ProductSearchComponent } from './views/product-search/product-search.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProductInfoCardComponent } from './components/product-info-card/product-info-card.component';
 import { CartService } from './services/cart.service';
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutComponent } from './views/checkout/checkout.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

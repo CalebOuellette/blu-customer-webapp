@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ProductProps } from '../../../blu-classes/product';
-import { CartService } from '../services/cart.service';
+import { ProductProps } from '../../../../blu-classes/product';
+import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-product-info-card',
   templateUrl: './product-info-card.component.html',
