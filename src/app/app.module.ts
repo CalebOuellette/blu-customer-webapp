@@ -7,7 +7,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
@@ -16,17 +16,20 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductInfoCardComponent } from './components/product-info-card/product-info-card.component';
 import { CartService } from './services/cart.service';
 import { CheckoutComponent } from './views/checkout/checkout.component';
+import { HomeComponent } from './views/home/home.component';
+import { LocationComponent } from './views/location/location.component';
+
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'checkout', component: CheckoutComponent},
-  {path: 'home', component: ProductSearchComponent},
+  //  { path: 'login', component: LoginComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'home', component: HomeComponent },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
-//  { path: '**', component: PageNotFoundComponent }
+  //  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -36,7 +39,10 @@ const appRoutes: Routes = [
     ProductSearchComponent,
     CartComponent,
     ProductInfoCardComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    HomeComponent,
+    LocationComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ const appRoutes: Routes = [
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

@@ -37,7 +37,7 @@ export class ProductSearchComponent implements OnInit {
 
   public productList
 
-  constructor(public fireDb: AngularFireDatabase,public afAuth: AngularFireAuth, public router: Router, public cart: CartService) {}
+  constructor(public fireDb: AngularFireDatabase ,public afAuth: AngularFireAuth, public router: Router, public cart: CartService) {}
 
   ngOnInit() {
     this.afAuth.authState.subscribe((user: firebase.User) => {
