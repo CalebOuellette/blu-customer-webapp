@@ -21,14 +21,14 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.locations = this.fireDb.list(Location.dbAddress, {
       query: {
-        orderByChild: 'name',
-        equalTo: 'Mercante'
+        orderByChild: 'partnered',
+        equalTo: true
       }
     });
 
     this.locations.subscribe((data) => {
       this.loading = false;
-    })
+    });
   }
 
 
