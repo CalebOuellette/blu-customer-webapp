@@ -24,6 +24,7 @@ const appRoutes: Routes = [
   //  { path: 'login', component: LoginComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'location/:id', component: LocationComponent},
   {
     path: '',
     redirectTo: '/home',

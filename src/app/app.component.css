@@ -9,3 +9,9 @@
     width: 100vw;
     z-index: -1;
 }
+
+#logo{
+        margin: 30px;
+        display: inline-block;
+        position: absolute;
+}

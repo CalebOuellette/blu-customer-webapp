@@ -18,6 +18,8 @@ button{
 .option{
     position: relative;
     width: 440px;
+    max-width: 440px;
+    min-widtH: 300px;
     min-height: 230px;
     text-align: center;
     background-color: white;
@@ -25,6 +27,7 @@ button{
     margin: 20px;
     border-radius: 5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 
 #parterneredTitle{
@@ -39,4 +42,15 @@ button{
     bottom: 0px;
     right: 0px;
     text-align: right;
+}
+
+.about{
+    text-align: left;
+    font-size: 12px;
+
+}
+
+.locationName{
+    text-align: left;
+    font-weight: bold;
 }
