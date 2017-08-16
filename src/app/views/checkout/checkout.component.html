@@ -16,18 +16,18 @@
     <button (click)="getToken()">Send info to Stripe</button>
   </div>
 
-  <div id="customerInfo" class="section">
+  <div id="customerInfo"  class="section">
     <div id="title">
       Your Info
     </div>
 
 
     Name<br>
-    <input [(ngModel)]="name" type="text">
+    <input [(ngModel)]="customer.name" type="text">
     <br>Phone Number<br>
-    <input [textMask]="{mask: aPhoneMask}" [(ngModel)]="phone" type="text">
+    <input [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text">
     <br> Email <br>
-    <input [textMask]="{mask: aEmailMask}" [(ngModel)]="email" type="text">
+    <input [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text">
     <br> Place of Delivery <br>
     <textarea [(ngModel)]="deliveryLocation" type="text"></textarea>
     <br> Payment type (cash) or (e transfer)

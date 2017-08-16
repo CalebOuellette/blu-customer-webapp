@@ -1,7 +1,9 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { OrderProps, CustomerProps } from '../../../../blu-classes';
 import { Router } from '@angular/router';
 import { emailMask } from 'text-mask-addons';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-checkout',
@@ -21,13 +23,13 @@ export class CheckoutComponent implements OnInit {
 
 
   //Customer Info
-  public email: string = "";
-  public phone: string = "";
+  public customer: CustomerProps = new CustomerProps();
+  public order: OrderProps = new OrderProps();
+
   public deliveryLocation: string = "";
-  public name: string = "";
 
 
-  constructor(private _zone: NgZone, public cart: CartService, public router: Router) { }
+  constructor(public fireDb: AngularFireDatabase, private _zone: NgZone, public cart: CartService, public router: Router) { }
 
   ngOnInit() {
     if (this.cart.orderItems.length < 1) {
@@ -63,6 +65,11 @@ export class CheckoutComponent implements OnInit {
         }
       });
     });
+  }
+
+
+  confirmOrder(){
+
   }
 
 }
