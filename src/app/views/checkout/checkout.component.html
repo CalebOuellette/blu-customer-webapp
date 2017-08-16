@@ -2,7 +2,7 @@
   <div id="contain">
     <app-cart [checkoutBtn]="false" id="cart"></app-cart>
   </div>
-  <div id="payment">
+  <div style="display: none" id="payment" class="section">
     <div id="title">
       Payment
     </div>
@@ -15,5 +15,28 @@
     <br> {{message}}<br>
     <button (click)="getToken()">Send info to Stripe</button>
   </div>
+
+  <div id="customerInfo" class="section">
+    <div id="title">
+      Your Info
+    </div>
+
+
+    Name<br>
+    <input [(ngModel)]="name" type="text">
+    <br>Phone Number<br>
+    <input [textMask]="{mask: aPhoneMask}" [(ngModel)]="phone" type="text">
+    <br> Email <br>
+    <input [textMask]="{mask: aEmailMask}" [(ngModel)]="email" type="text">
+    <br> Place of Delivery <br>
+    <textarea [(ngModel)]="deliveryLocation" type="text"></textarea>
+    <br> Payment type (cash) or (e transfer)
+
+  </div>
+
+
+
+
+
 
 </div>

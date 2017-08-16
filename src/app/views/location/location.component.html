@@ -1,3 +1,24 @@
-<p>
-  location works!
-</p>
+<app-cart [ngClass]="{cartShowing : cart.orderItems.length > 0}" id="cart"></app-cart>
+<div [ngClass]="{cartShowingSearch : cart.orderItems.length > 0}" style="padding-top: 100px">
+  <div id="content">
+
+    <div class="locationName"> {{(location | async)?.name}}</div>
+    <div id="description">
+      {{(location | async)?.description}}
+    </div>
+
+    <div id="menu">
+      <div *ngFor="let item of menuItems | async" class="menuItem">
+        <div class="menuItemTitle"> {{item.name}} | {{item.price | currency:'USD':true}} </div>
+        <div class="menuItemDescription">
+          {{item.description}}
+        </div>
+        <div class="buttonHolder">
+          <button (click)="addItemToCart(item)">Add</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

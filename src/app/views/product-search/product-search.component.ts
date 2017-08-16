@@ -35,7 +35,7 @@ export class ProductSearchComponent implements OnInit {
   public cartShowing: boolean = false;
 
 
-  public productList
+  public productList: any;
 
   constructor(public fireDb: AngularFireDatabase ,public afAuth: AngularFireAuth, public router: Router, public cart: CartService) {}
 

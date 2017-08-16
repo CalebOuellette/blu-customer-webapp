@@ -1,7 +1,8 @@
 #holder{
-    width: 100vw;
+    position: relative;
     height: 100vh;
-    display: flex;
+    display: flex;    
+    padding-left: 100px;
 }
 
 #contain{
@@ -27,4 +28,14 @@
 button{
     width: 360px;
     height: 30px;
+}
+
+.section{
+    width: 500px;
+    padding: 10px;
+}
+
+
+#customerInfo{
+    background-color: #AAA;
 }

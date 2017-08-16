@@ -1,6 +1,6 @@
 
 #background{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: linear-gradient(130deg, #1D79AF 0%, #030A21 100%);
@@ -12,6 +12,7 @@
 
 #logo{
         margin: 30px;
-        display: inline-block;
-        position: absolute;
+        position: fixed;
+        top: 0;
+        left: 0;
 }

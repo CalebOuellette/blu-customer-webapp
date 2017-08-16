@@ -1,0 +1,42 @@
+#content{
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    margin: 0px 100px 0px 100px;    
+    padding: 5%;
+}
+#description{
+    margin-bottom: 30px;
+}
+
+#menu{
+    height: 100%;
+    
+}
+
+.menuItem{
+    margin: 5px;
+
+}
+
+.menuItemTitle{    
+    font-weight: 500;
+}
+
+.buttonHolder{
+    text-align: right;
+}
+
+.cartShowing{
+        right: 0px !important;
+}
+
+.cartShowingSearch{
+       width: calc(100% - 300px) !important;
+}
+    
+#cart{
+    width: 300px;
+    position: fixed;
+    right: -10000px;
+}

@@ -20,7 +20,6 @@ Input{
   box-sizing: border-box;
   width: 360px;
   height: 45px;
-      
 }
 
 
@@ -33,9 +32,16 @@ button{
   width: 70px;
   height: 30px;
   border-radius: 4px;
+  width: 100px;
+  font-weight: 700;
 }
 
 
 button:hover {  
   box-shadow: 0 0 1pt .75pt  white inset;    
+}
+
+
+.locationName{
+  font-weight: bold;
 }

@@ -10,10 +10,6 @@
 
 
 
-button{
-    width: 100px;
-    font-weight: 700;
-}
 
 .option{
     position: relative;
@@ -52,5 +48,4 @@ button{
 
 .locationName{
     text-align: left;
-    font-weight: bold;
 }
