@@ -73,8 +73,10 @@ export class CheckoutComponent implements OnInit {
       this.order.customerID = success.key;
       this.order.paymentType = this.selectedPaymentType;
       this.order.to = this.deliveryLocation;
-      this.order.orderTime = new Date();      
+      this.order.orderTime = new Date().getTime();      
+      this.fireDb.list(Order.dbAddress).push(this.order).then((success) => {
 
+      });
     }, fail => {
       console.warn("Error Creating Customer");      
     });

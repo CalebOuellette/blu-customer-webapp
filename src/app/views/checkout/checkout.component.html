@@ -45,7 +45,7 @@
     </form>
 
     
-    <div *ngIf="infoForm.form.valid">
+    <div *ngIf="infoForm.form.valid && selectedPaymentType">
       <button (click)="confirmOrder()">confirmOrder </button>
     </div>
   </div>
