@@ -39,3 +39,13 @@ button{
 #customerInfo{
     background-color: #AAA;
 }
+
+.paymentOptions{
+    width: 100px;
+    margin: 4px;
+}
+
+.selected{
+    border: solid 2px white;
+    transform: scale(1.1);
+}

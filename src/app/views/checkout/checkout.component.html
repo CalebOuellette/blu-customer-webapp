@@ -16,22 +16,38 @@
     <button (click)="getToken()">Send info to Stripe</button>
   </div>
 
-  <div id="customerInfo"  class="section">
+  <div id="customerInfo" class="section">
     <div id="title">
       Your Info
     </div>
 
 
-    Name<br>
-    <input [(ngModel)]="customer.name" type="text">
-    <br>Phone Number<br>
-    <input [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text">
-    <br> Email <br>
-    <input [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text">
-    <br> Place of Delivery <br>
-    <textarea [(ngModel)]="deliveryLocation" type="text"></textarea>
-    <br> Payment type (cash) or (e transfer)
+    <form #infoForm="ngForm">
+      <div>
+        Name<br>
+        <input name="name" [(ngModel)]="customer.name" type="text" required>
+      </div>
+      <div>
+        Phone Number<br>
+        <input name="phone" [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text" required>
+      </div>
+      <div> Email <br>
+        <input name="email" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text" required>
+      </div>
+      <div>Place of Delivery <br>
+        <textarea name="deliveryLocation" [(ngModel)]="deliveryLocation" type="text" required></textarea>
+      </div>
+      <div>
+        Payment Type <br>
+        <button [ngClass]="{selected: selectedPaymentType === 'cash'}" (click)="selectedPaymentType = 'cash'" class="paymentOptions">Cash</button>
+        <button [ngClass]="{selected: selectedPaymentType === 'etransfer'}" (click)="selectedPaymentType = 'etransfer'"  class="paymentOptions">E Transfer</button>
+      </div>
+    </form>
 
+    
+    <div *ngIf="infoForm.form.valid">
+      <button (click)="confirmOrder()">confirmOrder </button>
+    </div>
   </div>
 
 
