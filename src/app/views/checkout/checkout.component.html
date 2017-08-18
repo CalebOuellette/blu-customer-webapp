@@ -1,7 +1,4 @@
 <div id="holder">
-  <div id="contain">
-    <app-cart [checkoutBtn]="false" id="cart"></app-cart>
-  </div>
   <div style="display: none" id="payment" class="section">
     <div id="title">
       Payment
@@ -15,13 +12,10 @@
     <br> {{message}}<br>
     <button (click)="getToken()">Send info to Stripe</button>
   </div>
-
   <div id="customerInfo" class="section">
     <div id="title">
       Your Info
     </div>
-
-
     <form #infoForm="ngForm">
       <div>
         Name<br>
@@ -43,16 +37,8 @@
         <button [ngClass]="{selected: selectedPaymentType === 'etransfer'}" (click)="selectedPaymentType = 'etransfer'"  class="paymentOptions">E Transfer</button>
       </div>
     </form>
-
-    
-    <div *ngIf="infoForm.form.valid && selectedPaymentType">
-      <button (click)="confirmOrder()">confirmOrder </button>
+    <div>
+      <button (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
     </div>
   </div>
-
-
-
-
-
-
 </div>

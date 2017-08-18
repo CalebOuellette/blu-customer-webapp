@@ -2,25 +2,19 @@
 
 }
 
-#contain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#everythingElse{
+    margin-top: 49px;
 }
-
-
 
 
 .option{
     position: relative;
-    width: 440px;
-    max-width: 440px;
-    min-widtH: 300px;
-    min-height: 230px;
     text-align: center;
     background-color: white;
     color: black;
     margin: 20px;
+    min-height: 200px;
     border-radius: 5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px;

@@ -1,6 +1,6 @@
-<app-cart [ngClass]="{cartShowing : cart.orderItems.length > 0}" id="cart"></app-cart>
-<div [ngClass]="{cartShowingSearch : cart.orderItems.length > 0}" style="padding-top: 100px">
-  <div id="content">
+<app-cart ></app-cart>
+<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}">
+  <div class.gt-md="margin-gt-md" id="content">
 
     <div class="locationName"> {{(location | async)?.name}}</div>
     <div id="description">
@@ -18,7 +18,5 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </div>

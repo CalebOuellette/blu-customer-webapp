@@ -5,6 +5,7 @@
 
 body{
       font-weight: 300;
+      min-width: 300px;
       margin: 0;
       border: 0;
       color: white;
@@ -37,6 +38,11 @@ button{
   outline: none;
 }
 
+button:disabled,
+button[disabled]{
+  background-color: #979797;
+  border: solid 1px white;
+}
 
 button:hover {  
   box-shadow: 0 0 1pt .75pt  white inset;    
