@@ -17,6 +17,13 @@
         z-index: -1;
 }
 
+#logo-img{
+    transition: transform 200ms;
+}
+
+#logo-img:hover{
+    transform: scale(1.2);
+}
 
 .footer{
     height: 100px;
