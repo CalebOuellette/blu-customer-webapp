@@ -2,14 +2,4 @@
     font-weight: bold;
 }
 
-textarea{
-    border: none;
-    overflow: auto;
-    outline: none;
-    box-shadow: none;
-    background-color: #E8E8E8;
-    border: 1px solid #E8E8E8;
-    resize: none;
-
-}
 
