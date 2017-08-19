@@ -23,6 +23,8 @@ import { CheckoutComponent } from './views/checkout/checkout.component';
 import { HomeComponent } from './views/home/home.component';
 import { LocationComponent } from './views/location/location.component';
 import { UniversalDeliveryComponent } from './views/universal-delivery/universal-delivery.component';
+import { FaqComponent } from './views/faq/faq.component';
+import { AboutUsComponent } from './views/about-us/about-us.component';
 
 
 const appRoutes: Routes = [
@@ -31,6 +33,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'location/:id', component: LocationComponent},
   { path: 'universal-delivery', component: UniversalDeliveryComponent},
+  { path: 'about', component: AboutUsComponent},
+  { path: 'faq', component: FaqComponent},
   {
     path: '',
     redirectTo: '/home',
@@ -50,6 +54,8 @@ const appRoutes: Routes = [
     HomeComponent,
     LocationComponent,
     UniversalDeliveryComponent,
+    FaqComponent,
+    AboutUsComponent,
     
   ],
   imports: [

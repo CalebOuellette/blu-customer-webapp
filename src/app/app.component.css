@@ -16,3 +16,21 @@
         left: 0;
         z-index: -1;
 }
+
+
+.footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lnk{
+    margin: 20px;
+    user-select: none;
+    cursor: pointer
+}
+
+.lnk:hover{
+    text-decoration: underline;
+}
