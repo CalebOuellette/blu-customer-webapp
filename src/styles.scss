@@ -12,6 +12,9 @@ body{
       font-family: 'Montserrat', sans-serif;
 }
 
+*{
+  outline: none;
+}
 Input{
   background-color: white;
   color: black;
@@ -51,4 +54,15 @@ button:hover {
 
 .locationName{
   font-weight: bold;
+}
+
+.paper{
+    background-color: white;
+    color: black;
+    min-height: 100vh;    
+    padding: 20px;
+}
+
+.paper-gt-md{
+  margin: 0px 100px 0px 100px;   
 }

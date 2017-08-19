@@ -22,6 +22,7 @@ import { CartService } from './services/cart.service';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import { HomeComponent } from './views/home/home.component';
 import { LocationComponent } from './views/location/location.component';
+import { UniversalDeliveryComponent } from './views/universal-delivery/universal-delivery.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'location/:id', component: LocationComponent},
+  { path: 'universal-delivery', component: UniversalDeliveryComponent},
   {
     path: '',
     redirectTo: '/home',
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
     CheckoutComponent,
     HomeComponent,
     LocationComponent,
+    UniversalDeliveryComponent,
     
   ],
   imports: [

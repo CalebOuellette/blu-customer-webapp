@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
   orderNow(location: string) {
     if (location === "everythingElse") {
       //go to everything page.
+      this.router.navigate(['universal-delivery']);
     } else if (location) {
       //go to notEverything page.
        this.router.navigate(['location/' + location]);
