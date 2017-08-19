@@ -1,46 +1,64 @@
-<div id="holder">
-    <div id="title"> Your Order</div>
-
-    <div id="table">
-        <div id="headers" class="row">
-            <div class="label">
-                Items
-            </div>
-            <div class="label">
-                Price
-            </div>
-        </div>
-        <div id="spacer">
-
-        </div>
-        <div class="row" *ngFor="let item of cart.orderItems">
-            <div class="label">
-                {{item.name}}
-            </div>
-            <div class="label">
-                {{item.price | currency:'USD':true}}
-            </div>
-        </div>
-        <div class="row" >
-            <div class="label">
-                Delivery Fee
-            </div>
-            <div class="label">
-                $3.50
+<div *ngIf="cart.orderItems.length > 0" fxShow.gt-md="false" class="open" (click)="openCart()">
+    <div>
+        <div style="transform: rotate(90deg)">Cart</div>
+        <div id="count">
+            <div id="icon">
+                {{cart.orderItems.length}}
             </div>
         </div>
     </div>
 
-    <div id="total">
-        <div class="row">
-            <div class="label">
-                Total:
+</div>
+<div id="cart" [ngClass.lt-md]="{cartShowingSmall : showingCart}" [ngClass.gt-md]="{cartShowing : cart.orderItems.length > 0}">
+    <div id="holder">
+        <div fxShow.gt-md="false" (click)="closeCart()" class="close">
+
+            <i class="material-icons">arrow_forward</i>
+        </div>
+        <div>
+            <div id="title"> Your Order</div>
+
+            <div id="table">
+                <div id="headers" class="row">
+                    <div class="label">
+                        Items
+                    </div>
+                    <div class="label">
+                        Price
+                    </div>
+                </div>
+                <div id="spacer">
+
+                </div>
+                <div class="row" *ngFor="let item of cart.orderItems">
+                    <div class="label">
+                        {{item.name}}
+                    </div>
+                    <div class="label">
+                        {{item.price | currency:'USD':true}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        Delivery Fee
+                    </div>
+                    <div class="label">
+                        $3.50
+                    </div>
+                </div>
             </div>
-            <div class="label">
-                {{cart.total | currency:'USD':true}}
+
+            <div id="total">
+                <div class="row">
+                    <div class="label">
+                        Total:
+                    </div>
+                    <div class="label">
+                        {{cart.total | currency:'USD':true}}
+                    </div>
+                </div>
+                <button *ngIf="checkoutBtn" id="checkout-btn" (click)="checkout()"> Checkout Now</button>
             </div>
         </div>
-        <button *ngIf="checkoutBtn" id="checkout-btn" (click)="checkout()"> Checkout Now</button>
     </div>
-
 </div>

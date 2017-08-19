@@ -8,7 +8,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TextMaskModule } from 'angular2-text-mask';
 
+
+
+//App stuff
 import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { ProductSearchComponent } from './views/product-search/product-search.component';
@@ -24,12 +28,13 @@ const appRoutes: Routes = [
   //  { path: 'login', component: LoginComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'location/:id', component: LocationComponent},
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
-  //  { path: '**', component: PageNotFoundComponent }
+    { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -52,7 +57,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    TextMaskModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

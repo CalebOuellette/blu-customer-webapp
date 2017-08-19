@@ -2,29 +2,22 @@
 
 }
 
-#contain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+#everythingElse{
+    margin-top: 49px;
 }
 
-
-
-button{
-    width: 100px;
-    font-weight: 700;
-}
 
 .option{
     position: relative;
-    width: 440px;
-    min-height: 230px;
     text-align: center;
     background-color: white;
     color: black;
     margin: 20px;
+    min-height: 200px;
     border-radius: 5px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 
 #parterneredTitle{
@@ -39,4 +32,14 @@ button{
     bottom: 0px;
     right: 0px;
     text-align: right;
+}
+
+.about{
+    text-align: left;
+    font-size: 12px;
+
+}
+
+.locationName{
+    text-align: left;
 }

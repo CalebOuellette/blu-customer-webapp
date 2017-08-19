@@ -1,27 +1,37 @@
-<div fxLayout.gt-md="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
-  <div>
+<div fxLayout.gt-md="row" fxLayout.lt-md="column" >
+  <div  fxFlex="10" fxHide.lt-md="true"> </div>
+
+  <div fxFlex="40">
     <div id="parterneredTitle">
       Parternered Restaurants
     </div>
-    <div class="option" id="parternered">
+    <div *ngFor="let location of locations | async" class="option" id="parternered">
       <div>
-        <div>
-          Mercante
+        <div class="locationName">
+          {{location.name}}
+        </div>
+        <div class="about">
+          {{location.description}}
         </div>
         <div class="buttonHolder">
-          <button>Order now</button>
+          <button (click)="orderNow(location.$key)">Order now</button>
         </div>
       </div>
     </div>
   </div>
-  <div style="padding-top: 29px;">
+  <div fxFlex="40">
     <div class="option" id="everythingElse">
-      <div class="title">
+      <div class="locationName">
         Everything Else
       </div>
+      <div class="about">
+        Anything you need on campus we got you covered.
+      </div>
+
       <div class="buttonHolder">
         <button (click)="orderNow('everythingElse')">Order now</button>
       </div>
     </div>
   </div>
+
 </div>

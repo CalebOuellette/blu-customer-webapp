@@ -12,6 +12,8 @@ export class CartComponent implements OnInit {
 
   @Input() public checkoutBtn: boolean = true;
 
+  public showingCart: boolean = false;
+
   ngOnInit() {
   }
 
@@ -20,5 +22,14 @@ export class CartComponent implements OnInit {
        this.router.navigate(['/checkout']);
     }
   }
+
+  openCart(){
+    this.showingCart = true;
+  }
+
+  closeCart(){
+    this.showingCart = false;
+  }
+
 
 }

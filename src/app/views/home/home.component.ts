@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
       //go to everything page.
     } else if (location) {
       //go to notEverything page.
+       this.router.navigate(['location/' + location]);
     }
   }
 

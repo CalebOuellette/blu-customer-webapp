@@ -1,8 +1,5 @@
 <div id="holder">
-  <div id="contain">
-    <app-cart [checkoutBtn]="false" id="cart"></app-cart>
-  </div>
-  <div id="payment">
+  <div style="display: none" id="payment" class="section">
     <div id="title">
       Payment
     </div>
@@ -15,5 +12,33 @@
     <br> {{message}}<br>
     <button (click)="getToken()">Send info to Stripe</button>
   </div>
-
+  <div id="customerInfo" class="section">
+    <div id="title">
+      Your Info
+    </div>
+    <form #infoForm="ngForm">
+      <div>
+        Name<br>
+        <input name="name" [(ngModel)]="customer.name" type="text" required>
+      </div>
+      <div>
+        Phone Number<br>
+        <input name="phone" [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text" required>
+      </div>
+      <div> Email <br>
+        <input name="email" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text" required>
+      </div>
+      <div>Place of Delivery <br>
+        <textarea name="deliveryLocation" [(ngModel)]="deliveryLocation" type="text" required></textarea>
+      </div>
+      <div>
+        Payment Type <br>
+        <button [ngClass]="{selected: selectedPaymentType === 'cash'}" (click)="selectedPaymentType = 'cash'" class="paymentOptions">Cash</button>
+        <button [ngClass]="{selected: selectedPaymentType === 'etransfer'}" (click)="selectedPaymentType = 'etransfer'"  class="paymentOptions">E Transfer</button>
+      </div>
+    </form>
+    <div>
+      <button (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
+    </div>
+  </div>
 </div>

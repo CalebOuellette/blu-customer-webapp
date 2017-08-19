@@ -39,16 +39,3 @@
         text-align: center;
         margin: 10px;
 }
-
-#cart{
-        position: fixed;
-    right: -10000px;
-}
-
-.cartShowing{
-        right: 0px !important;
-}
-
-.cartShowingSearch{
-       width: calc(100% - 300px) !important;
-}

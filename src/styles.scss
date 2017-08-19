@@ -5,6 +5,7 @@
 
 body{
       font-weight: 300;
+      min-width: 300px;
       margin: 0;
       border: 0;
       color: white;
@@ -20,7 +21,6 @@ Input{
   box-sizing: border-box;
   width: 360px;
   height: 45px;
-      
 }
 
 
@@ -33,9 +33,22 @@ button{
   width: 70px;
   height: 30px;
   border-radius: 4px;
+  width: 100px;
+  font-weight: 700;
+  outline: none;
 }
 
+button:disabled,
+button[disabled]{
+  background-color: #979797;
+  border: solid 1px white;
+}
 
 button:hover {  
   box-shadow: 0 0 1pt .75pt  white inset;    
+}
+
+
+.locationName{
+  font-weight: bold;
 }
