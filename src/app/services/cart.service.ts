@@ -18,4 +18,11 @@ export class CartService {
     this.total = this.total + Number.parseFloat(product.price);
   }
 
+  public addOrderItem(aOrderItem: OrderItemProps){
+    this.orderItems.push(aOrderItem);
+    if(aOrderItem.price){
+      this.total = this.total + Number.parseFloat(aOrderItem.price);
+    }
+  }
+
 }

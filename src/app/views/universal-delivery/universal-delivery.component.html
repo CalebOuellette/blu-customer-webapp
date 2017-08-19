@@ -1,9 +1,31 @@
 <app-cart></app-cart>
 <div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}">
   <div class="paper" class.gt-md="paper-gt-md paper">
-    <h3>Where do you want to order from? </h3>
-    <h3>Which items can we get you?</h3>
-    <h3>Order Alternitives (in case of issues with first location/item)</h3>
+    <div>
+      <div class="question"> Where do you want to order from? </div>
+      <textarea [(ngModel)]='aOrderItem.locationDescription' rows="5" cols="75">                             
+    </textarea>
+
+    </div>
+    <div>
+      <div class="question">
+        Which items can we get you?
+      </div>
+
+      <textarea [(ngModel)]='aOrderItem.description' rows="5" cols="75">                             
+    </textarea>
+
+    </div>
+    <div>
+      <div class="question">
+        Order Alternitives? (in case of issues with first location/item)
+      </div>
+      <textarea [(ngModel)]='aOrderItem.alternativeItemDescription' rows="5" cols="75">                             
+    </textarea>
+
+    </div>
+    <button (click)="addItemToCart(item)">Add</button>
   </div>
+
 
 </div>
