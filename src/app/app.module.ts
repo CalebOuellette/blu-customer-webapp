@@ -30,6 +30,7 @@ import { CartTableComponent } from './components/cart-table/cart-table.component
 import { MaxCharLengthPipe } from './pipes/max-char-length.pipe';
 import { WeClosedComponent } from './views/we-closed/we-closed.component';
 import { WeClosedGuard } from './guards/we-closed.guard';
+import { ComingSoonComponent } from './views/coming-soon/coming-soon.component';
 
 const appRoutes: Routes = [
   //  { path: 'login', component: LoginComponent },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'closed', component: WeClosedComponent },
+  { path: 'coming-soon', component: ComingSoonComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -64,6 +66,7 @@ const appRoutes: Routes = [
     CartTableComponent,
     MaxCharLengthPipe,
     WeClosedComponent,
+    ComingSoonComponent,
 
   ],
   imports: [

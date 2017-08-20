@@ -1,0 +1,17 @@
+.l{
+    color: #FFFFFF;
+    font-weight: Bold;
+    font-size: 48px;
+}
+.s{
+    color: #F2C94C;
+    font-weight: Bold;
+    font-size: 24px;
+}
+
+.outer{
+    min-height: calc(100vh - 115px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
