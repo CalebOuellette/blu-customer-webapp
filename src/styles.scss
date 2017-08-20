@@ -73,12 +73,17 @@ textarea{
   overflow: auto;
   outline: none;
   box-shadow: none;
-  background-color: #E8E8E8;
-  border: 1px solid #E8E8E8;
+ // background-color: #E8E8E8;
+  border: 1px solid #ccc;
   resize: none;
-
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px 20px;  
 }
-
+textarea::-webkit-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+  }
 
 .cartShowingSearch{
   width: calc(100% - 300px) !important;

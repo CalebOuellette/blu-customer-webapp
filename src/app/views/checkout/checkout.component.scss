@@ -1,5 +1,5 @@
 #holder{
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #contain{
@@ -33,9 +33,20 @@ button{
 .paymentOptions{
     width: 100px;
     margin: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
 
 .selected{
-    border: solid 2px white;
-    transform: scale(1.1);
+    background-color: #F4C858;
+}
+
+#infoForm{
+    div{
+        margin-top: 10px;
+    }
+}
+
+textarea{
+    max-width: 360px;
 }

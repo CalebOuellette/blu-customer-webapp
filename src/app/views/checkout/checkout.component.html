@@ -23,20 +23,23 @@
     <h1>
       Your Info
     </h1>
-    <form #infoForm="ngForm">
+    <form id="infoForm" #infoForm="ngForm">
       <div>
         Name<br>
-        <input name="name" [(ngModel)]="customer.name" type="text" required>
+        <input placeholder="John Smith" name="name" [(ngModel)]="customer.name" type="text" required>
       </div>
       <div>
         Phone Number<br>
-        <input name="phone" [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text" required>
+        <input placeholder="(555)-987-1234" name="phone" [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text"
+          required>
       </div>
       <div> Email <br>
-        <input name="email" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text" required>
+        <input name="email" placeholder="email@website.com" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text"
+          required>
       </div>
       <div>Place of Delivery <br>
-        <textarea name="deliveryLocation" [(ngModel)]="deliveryLocation" type="text" required></textarea>
+        <textarea placeholder="Address, landmark, or anywhere else on UBC" name="deliveryLocation" rows="5" cols="75" [(ngModel)]="deliveryLocation"
+          type="text" required></textarea>
       </div>
       <div>
         Payment Type <br>
@@ -44,15 +47,34 @@
         <button [ngClass]="{selected: selectedPaymentType === 'etransfer'}" (click)="selectedPaymentType = 'etransfer'" class="paymentOptions">E Transfer</button>
       </div>
     </form>
-    <div>
-      <button (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
-    </div>
+
   </div>
   <div class="section">
     <h1>
       Finalize
     </h1>
-
+    <h2>
+      Fees
+    </h2>
+    <div>
+      There is a flat $4.50 fee for all deliverys. If the location is located in Westbrook village, there is an additonal ¢50.
+      If you are ordering from more than 1 location, there is an additonal charge of $2.00 for each location after the first.
+    </div>
+    <h2>
+      Final Price
+    </h2>
+    <div>
+      The final price of your order will be texted to you by your driver after they pickup your order. Please have your cash or E-transfter ready.
+    </div>
+    <h2>
+      Communication
+    </h2>
+    <div> 
+      In order to coordinate your order we will contact you on the number you have provided. After pressing the confirm button we will send you a text to confirm the order. Please be ready!
+    </div>
+    <div>
+      <button (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
+    </div>
   </div>
 
 
