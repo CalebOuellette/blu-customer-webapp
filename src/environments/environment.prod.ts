@@ -2,10 +2,10 @@
 export const environment = {
   production: true,
    firebase: {
-    apiKey: 'AIzaSyDobwf-qk7GDNXECf4YqfQ2gnSaNd8cKDc',
-    authDomain: 'bludelivery-f28c2.firebaseapp.com',
-    databaseURL: 'https://bludelivery-f28c2.firebaseio.com/',
-    projectId: 'bludelivery-f28c2',    
+    apiKey: 'AIzaSyCxTkqR8ItyP9UH_dM0WsYXNKAmOQfDvYg',
+    authDomain: 'bludelivery-prod.firebaseapp.com',
+    databaseURL: 'https://bludelivery-prod.firebaseio.com/',
+    projectId: 'bludelivery-prod',    
   }
 };
 

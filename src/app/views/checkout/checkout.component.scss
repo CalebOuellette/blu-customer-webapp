@@ -1,10 +1,8 @@
 #holder{
     min-height: 100vh;
+    padding: 20px;
 }
 
-#contain{
-    width: 500px;
-}
 
 #payment{    
     width: 500px;
@@ -13,19 +11,20 @@
 }
 
 
-
-
-button{
-    width: 360px;
-    height: 30px;
+#confirm{
+    max-width: 360px;
+    width: 100%;   
+    margin-top: 50px; 
 }
 
+
 .section{
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     padding: 10px;
     background-color: white;
     color: black;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 
@@ -49,4 +48,9 @@ button{
 
 textarea{
     max-width: 360px;
+}
+
+input{
+    max-width: 360px;
+    width: 100%;    
 }

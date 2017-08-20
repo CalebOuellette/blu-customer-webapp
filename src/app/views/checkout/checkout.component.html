@@ -1,5 +1,5 @@
-<div id="holder" fxLayout.gt-md="row" fxLayout.lt-md="column">
-  <div id="cartInfo" class="section">
+<div id="holder" fxLayout.gt-md="row" fxLayout.lt-md="column" fxLayoutAlign="space-around none" >
+  <div fxFlex="30" id="cartInfo" class="section">
     <h1>
       Your Order
     </h1>
@@ -19,7 +19,7 @@
     <br> {{message}}<br>
     <button (click)="getToken()">Send info to Stripe</button>
   </div> -->
-  <div id="customerInfo" class="section">
+  <div fxFlex="30" id="customerInfo" class="section">
     <h1>
       Your Info
     </h1>
@@ -49,7 +49,7 @@
     </form>
 
   </div>
-  <div class="section">
+  <div fxFlex="30" class="section">
     <h1>
       Finalize
     </h1>
@@ -73,7 +73,7 @@
       In order to coordinate your order we will contact you on the number you have provided. After pressing the confirm button we will send you a text to confirm the order. Please be ready!
     </div>
     <div>
-      <button (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
+      <button id="confirm" (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
     </div>
   </div>
 
