@@ -29,14 +29,14 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
 import { CartTableComponent } from './components/cart-table/cart-table.component';
 import { MaxCharLengthPipe } from './pipes/max-char-length.pipe';
 import { WeClosedComponent } from './views/we-closed/we-closed.component';
-
+import { WeClosedGuard } from './guards/we-closed.guard';
 
 const appRoutes: Routes = [
   //  { path: 'login', component: LoginComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'location/:id', component: LocationComponent },
-  { path: 'universal-delivery', component: UniversalDeliveryComponent },
+  { path: 'checkout', component: CheckoutComponent,  canActivate: [WeClosedGuard]  },
+  { path: 'home', component: HomeComponent, canActivate: [WeClosedGuard] },
+  { path: 'location/:id', component: LocationComponent,  canActivate: [WeClosedGuard] },
+  { path: 'universal-delivery', component: UniversalDeliveryComponent,  canActivate: [WeClosedGuard] },
   { path: 'about', component: AboutUsComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'closed', component: WeClosedComponent },
@@ -77,7 +77,7 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     TextMaskModule
   ],
-  providers: [CartService, AppSettingsService],
+  providers: [CartService, AppSettingsService, WeClosedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

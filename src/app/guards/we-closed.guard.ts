@@ -16,7 +16,7 @@ export class WeClosedGuard implements CanActivate {
         if (data.isOpen) {
           success(true);
         } else {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/closed']);
           success(false);
         }
       });
