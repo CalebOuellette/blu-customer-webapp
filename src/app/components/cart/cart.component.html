@@ -7,9 +7,9 @@
             </div>
         </div>
     </div>
-
 </div>
-<div id="cart" [ngClass.lt-md]="{cartShowingSmall : showingCart}" [ngClass.gt-md]="{cartShowing : cart.orderItems.length > 0}">
+
+<div id="cart" [ngClass.lt-lg]="{cartShowingSmall : showingCart}" [ngClass.gt-md]="{cartShowing : cart.orderItems.length > 0}">
     <div id="holder">
         <div fxShow.gt-md="false" (click)="closeCart()" class="close">
 
