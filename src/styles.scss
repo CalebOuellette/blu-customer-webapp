@@ -28,6 +28,7 @@ Input{
 
 
 
+
 button{
     //  background: linear-gradient(0deg, #E4F087 0%, #FC9C5D 100%);
   background-color: #F4C858;
@@ -77,3 +78,9 @@ textarea{
   resize: none;
 
 }
+
+
+.cartShowingSearch{
+  width: calc(100% - 300px) !important;
+}
+

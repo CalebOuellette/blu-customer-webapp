@@ -18,46 +18,21 @@
         <div>
             <div id="title"> Your Order</div>
 
-            <div id="table">
-                <div id="headers" class="row">
-                    <div class="label">
-                        Items
-                    </div>
-                    <div class="label">
-                        Price
-                    </div>
-                </div>
-                <div id="spacer">
-
-                </div>
-                <div class="row" *ngFor="let item of cart.orderItems">
-                    <div class="label">
-                        {{item.name}}
-                    </div>
-                    <div class="label">
-                        {{item.price | currency:'USD':true}}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="label">
-                        Delivery Fee
-                    </div>
-                    <div class="label">
-                        $3.50
-                    </div>
-                </div>
-            </div>
+        <blu-cart-table></blu-cart-table>
 
             <div id="total">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="label">
                         Total:
                     </div>
                     <div class="label">
                         {{cart.total | currency:'USD':true}}
                     </div>
-                </div>
-                <button *ngIf="checkoutBtn" id="checkout-btn" (click)="checkout()"> Checkout Now</button>
+                </div>                 -->
+
+            </div>
+            <div id="checkoutBtnHolder">
+                <button id="checkout-btn" (click)="checkout()"> Checkout Now</button>
             </div>
         </div>
     </div>

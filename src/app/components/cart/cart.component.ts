@@ -10,11 +10,10 @@ export class CartComponent implements OnInit {
 
   constructor(public cart: CartService, public router: Router) { }
 
-  @Input() public checkoutBtn: boolean = true;
-
-  public showingCart: boolean = false;
+  @Input() public showingCart: boolean = false;
 
   ngOnInit() {
+    this.showingCart = false;
   }
 
   checkout(){

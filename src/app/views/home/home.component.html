@@ -1,4 +1,6 @@
-<div fxLayout.gt-md="row" fxLayout.lt-md="column" >
+
+<app-cart style="z-index: 1; position: relative;" [showingCart]="false" ></app-cart>
+<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer"  fxLayout.gt-md="row" fxLayout.lt-md="column" >
   <div  fxFlex="10" fxHide.lt-md="true"> </div>
 
   <div fxFlex="40">
@@ -33,5 +35,4 @@
       </div>
     </div>
   </div>
-
 </div>

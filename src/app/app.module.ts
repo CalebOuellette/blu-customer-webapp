@@ -25,6 +25,8 @@ import { LocationComponent } from './views/location/location.component';
 import { UniversalDeliveryComponent } from './views/universal-delivery/universal-delivery.component';
 import { FaqComponent } from './views/faq/faq.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
+import { CartTableComponent } from './components/cart-table/cart-table.component';
+import { MaxCharLengthPipe } from './pipes/max-char-length.pipe';
 
 
 const appRoutes: Routes = [
@@ -56,6 +58,8 @@ const appRoutes: Routes = [
     UniversalDeliveryComponent,
     FaqComponent,
     AboutUsComponent,
+    CartTableComponent,
+    MaxCharLengthPipe,
     
   ],
   imports: [

@@ -16,7 +16,7 @@ export class ProductInfoCardComponent {
   
 
   addItemToCart(){
-    this.cart.addProduct(this.product);
+  //  this.cart.addProduct(this.product);
   }
 
 }

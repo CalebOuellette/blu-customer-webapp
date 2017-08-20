@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   
-  constructor( public router: Router ) {
+  constructor( public router: Router)  {
     
   }
 

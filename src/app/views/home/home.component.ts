@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Location, LocationProps } from '../../../../blu-classes';
 import { Router } from '@angular/router';
-
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public fireDb: AngularFireDatabase, public router: Router) { }
+  constructor(public fireDb: AngularFireDatabase, public router: Router, public cart: CartService) { }
 
   public locations: FirebaseListObservable<any>;
 

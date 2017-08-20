@@ -20,8 +20,11 @@ export class UniversalDeliveryComponent implements OnInit {
 
 
   addItemToCart() {
-    this.cart.addOrderItem(this.aOrderItem);
-    this.router.navigate(['/checkout']);
+    if(this.aOrderItem.description && this.aOrderItem.locationDescription){
+      this.cart.addOrderItem(this.aOrderItem);
+      this.aOrderItem = new OrderItemProps();
+    }
+    
   }
 
 

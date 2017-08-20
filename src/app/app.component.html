@@ -1,18 +1,23 @@
-
-<div routerLink="/home" id="logo" >
-  <img id="logo-img" src="assets/logo_b_sm.png"><br>
+<div id="logo">
+  <img  routerLink="/home" id="logo-img" src="assets/logo_b_sm.png">
+  <span  routerLink="/home" class="tlink" style="margin-left: 20px;">
+    Home
+  </span>
 </div>
 
 <router-outlet></router-outlet>
 
-<div id="background">
-</div>
+
 <div class="footer">
-  <div class="lnk" routerLink="/about"> 
+  <div class="lnk" routerLink="/about">
     About
   </div>
-  <div class="lnk" routerLink="/faq"> 
+  <div class="lnk" routerLink="/faq">
     FAQ
   </div>
 
 </div>
+
+
+<div id="background">
+  </div>

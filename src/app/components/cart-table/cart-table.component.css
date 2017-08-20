@@ -1,0 +1,17 @@
+
+.table{
+    width: 300px;
+    overflow: hidden;
+}
+
+.tableItem{
+    padding: 10px;
+}
+
+
+.label{
+    font-weight: 700;
+    text-align: left;
+    font-size: 18px;
+    margin-right: 5px;    
+}

@@ -2,11 +2,10 @@
 <div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}">
   <div class="paper" class.gt-md="paper-gt-md paper">
 
-    <div class="locationName"> {{(location | async)?.name}}</div>
+      <h1> {{location?.name}}</h1>
     <div id="description">
-      {{(location | async)?.description}}
+      {{location?.description}}
     </div>
-
     <div id="menu">
       <div *ngFor="let item of menuItems | async" class="menuItem">
         <div class="menuItemTitle"> {{item.name}} | {{item.price | currency:'USD':true}} </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductProps, OrderItemProps } from '../../../blu-classes';
+import { ProductProps, OrderItemProps, LocationProps } from '../../../blu-classes';
 @Injectable()
 export class CartService {
 
@@ -7,13 +7,14 @@ export class CartService {
 
   public orderItems: Array<OrderItemProps> = [];
 
-  public total: number = 3.5;
+  public total: number;
 
-  public addProduct(product: ProductProps){
+  public addProduct(product: ProductProps, location: LocationProps){
     var x = new OrderItemProps();
     x.name = product.name;
     x.price = product.price;
     x.description = product.description;
+    x.locationDescription = location.name;
     this.orderItems.push(x);
     this.total = this.total + Number.parseFloat(product.price);
   }

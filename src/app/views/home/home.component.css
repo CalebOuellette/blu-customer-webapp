@@ -43,3 +43,7 @@
 .locationName{
     text-align: left;
 }
+
+.outer{
+    min-height: 100vh;
+}

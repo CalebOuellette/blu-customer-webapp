@@ -12,7 +12,7 @@ export class LocationComponent implements OnInit {
 
   constructor(public fireDb: AngularFireDatabase, private route: ActivatedRoute, public router: Router, public cart: CartService) { }
 
-  public location: FirebaseObjectObservable<LocationProps>;
+  public location: LocationProps;
 
   public menuItems: FirebaseListObservable<ProductProps[]>;
 
@@ -23,7 +23,9 @@ export class LocationComponent implements OnInit {
       if (params['id']) {
         this.locationID = params['id'];
 
-        this.location = this.fireDb.object(Location.dbAddress + '/' + this.locationID);
+        this.fireDb.object(Location.dbAddress + '/' + this.locationID).subscribe((data) => {
+          this.location =data;
+        });
         this.menuItems = this.fireDb.list(Product.dbAddress, {
           query: {
             orderByChild: 'locationID',
@@ -39,7 +41,7 @@ export class LocationComponent implements OnInit {
 
 
   addItemToCart(aProduct: ProductProps) {
-    this.cart.addProduct(aProduct);
+    this.cart.addProduct(aProduct, this.location);
   }
 
 
