@@ -13,7 +13,4 @@ export class AppComponent {
     
   }
 
-  navHome(){
-    this.router.navigate["home"];
-  }
 }

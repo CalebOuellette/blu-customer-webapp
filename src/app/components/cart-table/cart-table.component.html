@@ -4,13 +4,22 @@
             <span class="label">Item</span> {{item.name}}
         </div>
         <div *ngIf="!item.name">
-            <span class="label">Item</span> {{item.description  | maxCharLength: 100}}
+            <span class="label">Item</span> {{item.description | maxCharLength: 100}}
         </div>
         <div>
             <span class="label">From</span>{{item.locationDescription | maxCharLength: 100}}
         </div>
         <div *ngIf="item.price">
             <span class="label">Price</span> {{item.price | currency:'USD':true}}
+        </div>
+    </div>
+
+    <div class="tableItem">
+        <div>
+            <span class="label">Item</span> Delivery Fee
+        </div>
+        <div>
+            <span class="label">Price</span> $4.50
         </div>
     </div>
     <!-- <div class="row">

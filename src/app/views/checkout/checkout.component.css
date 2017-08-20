@@ -1,8 +1,5 @@
 #holder{
-    position: relative;
     height: 100vh;
-    display: flex;    
-    padding-left: 100px;
 }
 
 #contain{
@@ -16,14 +13,7 @@
 }
 
 
-#title{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: 4px;
-    font-weight: 400;
-    font-size: 44px;
-    color: #FFF;
-} 
+
 
 button{
     width: 360px;
@@ -33,12 +23,12 @@ button{
 .section{
     width: 500px;
     padding: 10px;
+    background-color: white;
+    color: black;
+    margin: 10px;
 }
 
 
-#customerInfo{
-    background-color: #AAA;
-}
 
 .paymentOptions{
     width: 100px;

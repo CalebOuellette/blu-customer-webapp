@@ -1,6 +1,9 @@
-<div id="holder">
+<div id="holder" fxLayout.gt-md="row" fxLayout.lt-md="column">
   <div id="cartInfo" class="section">
-
+    <h1>
+      Your Order
+    </h1>
+    <blu-cart-table></blu-cart-table>
   </div>
 
   <!-- <div style="display: none" id="payment" class="section">
@@ -17,9 +20,9 @@
     <button (click)="getToken()">Send info to Stripe</button>
   </div> -->
   <div id="customerInfo" class="section">
-    <div id="title">
+    <h1>
       Your Info
-    </div>
+    </h1>
     <form #infoForm="ngForm">
       <div>
         Name<br>
@@ -44,6 +47,12 @@
     <div>
       <button (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
     </div>
+  </div>
+  <div class="section">
+    <h1>
+      Finalize
+    </h1>
+
   </div>
 
 

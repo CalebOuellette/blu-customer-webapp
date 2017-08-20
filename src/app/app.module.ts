@@ -19,6 +19,7 @@ import { ProductSearchComponent } from './views/product-search/product-search.co
 import { CartComponent } from './components/cart/cart.component';
 import { ProductInfoCardComponent } from './components/product-info-card/product-info-card.component';
 import { CartService } from './services/cart.service';
+import { AppSettingsService } from './services/app-settings.service';
 import { CheckoutComponent } from './views/checkout/checkout.component';
 import { HomeComponent } from './views/home/home.component';
 import { LocationComponent } from './views/location/location.component';
@@ -27,22 +28,24 @@ import { FaqComponent } from './views/faq/faq.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import { CartTableComponent } from './components/cart-table/cart-table.component';
 import { MaxCharLengthPipe } from './pipes/max-char-length.pipe';
+import { WeClosedComponent } from './views/we-closed/we-closed.component';
 
 
 const appRoutes: Routes = [
   //  { path: 'login', component: LoginComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'location/:id', component: LocationComponent},
-  { path: 'universal-delivery', component: UniversalDeliveryComponent},
-  { path: 'about', component: AboutUsComponent},
-  { path: 'faq', component: FaqComponent},
+  { path: 'location/:id', component: LocationComponent },
+  { path: 'universal-delivery', component: UniversalDeliveryComponent },
+  { path: 'about', component: AboutUsComponent },
+  { path: 'faq', component: FaqComponent },
+  { path: 'closed', component: WeClosedComponent },
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
-    { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -60,7 +63,8 @@ const appRoutes: Routes = [
     AboutUsComponent,
     CartTableComponent,
     MaxCharLengthPipe,
-    
+    WeClosedComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,7 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     TextMaskModule
   ],
-  providers: [CartService],
+  providers: [CartService, AppSettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
