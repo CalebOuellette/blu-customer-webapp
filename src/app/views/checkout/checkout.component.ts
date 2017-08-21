@@ -1,6 +1,6 @@
 import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { OrderProps, CustomerProps, Customer, Order } from '../../../../blu-classes';
+import { OrderProps, CustomerProps, Customer, Order, OrderItem } from '../../../../blu-classes';
 import { Router } from '@angular/router';
 import { emailMask } from 'text-mask-addons';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
@@ -27,6 +27,9 @@ export class CheckoutComponent implements OnInit {
   public order: OrderProps = new OrderProps();
 
   public deliveryLocation: string = "";
+
+  private itemsToSave: number;
+  public saving: boolean = false;
 
   @ViewChild('infoForm') infoForm;
 
@@ -68,18 +71,52 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  confirmOrder() {
-    this.fireDb.list(Customer.dbAddress).push(this.customer).then((success) => {
-      this.order.customerID = success.key;
+ 
+
+  public confirmOrder() {
+    this.itemsToSave = this.cart.orderItems.length;
+    this.saving = true;
+    this.fireDb.list(Customer.dbAddress).push(this.customer).then((customerSuccess) => {
+      this.order.customerID = customerSuccess.key;
       this.order.paymentType = this.selectedPaymentType;
       this.order.to = this.deliveryLocation;
-      this.order.orderTime = new Date().getTime();      
-      this.fireDb.list(Order.dbAddress).push(this.order).then((success) => {
+      this.order.orderTime = new Date().getTime();
+      this.order.createdBy = "blu-customer-webapp";
+      this.order.createdDate = new Date().getTime();
+      this.fireDb.list(Order.dbAddress).push(this.order).then((orderSuccess) => {
+        this.cart.orderItems.forEach((value) => {
+          value.orderID = orderSuccess.key;
+          this.fireDb.list(OrderItem.dbAddress).push(value).then((orderItemSuccess) => {
+            this.aSaveCompleted();
+          }, fail => {
+            console.warn("Error Creating Order Item");
+            this.saveFailed();
+          });
+        });
 
+      }, fail => {
+        console.warn("Error Creating Order");
+        this.saveFailed();
       });
     }, fail => {
-      console.warn("Error Creating Customer");      
+      this.saveFailed();
+      console.warn("Error Creating Customer");
     });
+
   }
+
+  private aSaveCompleted(){
+    this.itemsToSave--;
+    if(this.itemsToSave == 0){      
+      this.saving = false;
+      this.cart.orderItems = [];
+      this.router.navigate(["review"]);
+    }
+  }
+
+  private saveFailed(){    
+    this.saving = false;
+  }
+
 
 }

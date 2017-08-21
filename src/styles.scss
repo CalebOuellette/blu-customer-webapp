@@ -24,8 +24,11 @@ Input{
   box-sizing: border-box;
   width: 360px;
   height: 45px;
+  font-family: 'Montserrat', sans-serif;
 }
-
+Input::input-placeholder{
+  font-family: 'Montserrat', sans-serif;
+}
 
 
 
@@ -40,6 +43,7 @@ button{
   width: 100px;
   font-weight: 700;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button:disabled,
@@ -80,8 +84,9 @@ textarea{
   width: 100%;
   border-radius: 4px;
   padding: 12px 20px;  
+  font-family: 'Montserrat', sans-serif;
 }
-textarea::-webkit-input-placeholder {
+textarea::input-placeholder {
   font-family: 'Montserrat', sans-serif;
   }
 
@@ -89,3 +94,21 @@ textarea::-webkit-input-placeholder {
   width: calc(100% - 300px) !important;
 }
 
+
+.l{
+  color: #FFFFFF;
+  font-weight: Bold;
+  font-size: 48px;
+}
+.s{
+  color: #F2C94C;
+  font-weight: Bold;
+  font-size: 24px;
+}
+
+.outer{
+  min-height: calc(100vh - 115px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -34,7 +34,7 @@
           required>
       </div>
       <div> Email <br>
-        <input name="email" placeholder="email@website.com" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text"
+        <input name="email" placeholder="Email@website.com" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text"
           required>
       </div>
       <div>Place of Delivery <br>
@@ -73,7 +73,8 @@
       In order to coordinate your order we will contact you on the number you have provided. After pressing the confirm button we will send you a text to confirm the order. Please be ready!
     </div>
     <div>
-      <button id="confirm" (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
+      <button *ngIf="!saving" id="confirm" (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
+      <div *ngIf="saving" id="saving">Saving...</div>
     </div>
   </div>
 
