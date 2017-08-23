@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "bludelivery-f28c2"
+    "default": "bludelivery-f28c2",
+    "prod": "bludelivery-prod"
   }
 }

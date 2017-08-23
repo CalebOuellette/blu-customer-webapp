@@ -31,6 +31,8 @@ import { MaxCharLengthPipe } from './pipes/max-char-length.pipe';
 import { WeClosedComponent } from './views/we-closed/we-closed.component';
 import { WeClosedGuard } from './guards/we-closed.guard';
 import { ComingSoonComponent } from './views/coming-soon/coming-soon.component';
+import { ReviewComponent } from './views/review/review.component';
+import { EmploymentComponent } from './views/employment/employment.component';
 
 const appRoutes: Routes = [
   //  { path: 'login', component: LoginComponent },
@@ -42,6 +44,8 @@ const appRoutes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'closed', component: WeClosedComponent },
   { path: 'coming-soon', component: ComingSoonComponent },
+  { path: 'review', component: ReviewComponent },
+  { path: 'employment', component: EmploymentComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -67,6 +71,8 @@ const appRoutes: Routes = [
     MaxCharLengthPipe,
     WeClosedComponent,
     ComingSoonComponent,
+    ReviewComponent,
+    EmploymentComponent,
 
   ],
   imports: [

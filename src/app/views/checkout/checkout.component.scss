@@ -1,0 +1,74 @@
+#holder{
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+#payment{    
+    width: 500px;
+    background-color: #AAA;
+    padding-left: 30px;
+}
+
+
+#confirm{
+    max-width: 360px;
+    width: 100%;   
+    margin-top: 50px; 
+}
+
+
+.section{
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    margin: 10px 0;
+}
+
+
+
+.paymentOptions{
+    width: 100px;
+    margin: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.selected{
+    background-color: #F4C858;
+}
+
+#infoForm{
+    div{
+        margin-top: 10px;
+    }
+}
+
+textarea{
+    max-width: 360px;
+}
+
+input{
+    max-width: 360px;
+    width: 100%;    
+}
+
+#saving{
+    background-color: #95E667;
+    border: none;
+    color: #000000;
+    width: 70px;
+    height: 30px;
+    border-radius: 4px;
+    width: 100px;
+    font-weight: 700;
+    outline: none;
+    max-width: 360px;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13.3333px;
+}
