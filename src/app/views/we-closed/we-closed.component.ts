@@ -10,7 +10,7 @@ export class WeClosedComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit() {
-    this.router.navigate(["coming-soon"]);
+    // this.router.navigate(["coming-soon"]);
   }
 
 }

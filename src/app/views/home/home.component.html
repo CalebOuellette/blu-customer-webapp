@@ -1,19 +1,19 @@
+<app-cart style="z-index: 1; position: relative;" [showingCart]="false">
+</app-cart>
 
-<app-cart style="z-index: 1; position: relative;" [showingCart]="false" ></app-cart>
-<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer"  fxLayout.gt-md="row" fxLayout.lt-lg="column" >
+<!-- <div class="mercanteBack"> 
 
+</div> -->
+
+<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer" fxLayout.gt-md="row" fxLayout.lt-lg="column">
   <div fxFlex.gt-md="40" fxFlex.lt-lg="100" style="width: 100%;">
     <div id="parterneredTitle">
       Parternered Restaurants
     </div>
     <div *ngFor="let location of locations | async" class="option" id="parternered">
+
       <div>
-        <div class="locationName">
-          {{location.name}}
-        </div>
-        <div class="about">
-          {{location.description}}
-        </div>
+        <img style="   width: 200px; " [src]="location.logoUrl">
         <div class="buttonHolder">
           <button (click)="orderNow(location.$key)">Order now</button>
         </div>
@@ -23,7 +23,7 @@
   <div fxFlex.gt-md="40" fxFlex.lt-lg="100" style="width: 100%;">
     <div class="option" id="everythingElse">
       <div class="locationName">
-          All Other Locations
+        All Other Locations
       </div>
       <div class="about">
         Anything you need on campus we got you covered.
