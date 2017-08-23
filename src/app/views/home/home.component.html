@@ -1,8 +1,8 @@
 
 <app-cart style="z-index: 1; position: relative;" [showingCart]="false" ></app-cart>
-<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer"  fxLayout.gt-md="row" fxLayout.lt-md="column" >
+<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer"  fxLayout.gt-md="row" fxLayout.lt-lg="column" >
 
-  <div fxFlex="40">
+  <div fxFlex.gt-md="40" fxFlex.lt-lg="100" style="width: 100%;">
     <div id="parterneredTitle">
       Parternered Restaurants
     </div>
@@ -20,10 +20,10 @@
       </div>
     </div>
   </div>
-  <div fxFlex="40">
+  <div fxFlex.gt-md="40" fxFlex.lt-lg="100" style="width: 100%;">
     <div class="option" id="everythingElse">
       <div class="locationName">
-          Universal Delivery
+          All Other Locations
       </div>
       <div class="about">
         Anything you need on campus we got you covered.
