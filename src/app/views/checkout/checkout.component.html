@@ -1,4 +1,4 @@
-<div id="holder" fxLayout.gt-md="row" fxLayout.lt-md="column"  ngClass.lt-lg="phoneFixFour" fxLayoutAlign="space-around none" >
+<div fxHide.lt-lg id="holder" fxLayout.gt-md="row" fxLayout.lt-md="column" fxLayoutAlign="space-around none" >
   <div fxFlex="30" id="cartInfo" class="section">
     <h1>
       Your Order
@@ -76,6 +76,85 @@
       <div *ngIf="saving" id="saving">Saving...</div>
     </div>
   </div>
+</div>
 
 
+<div fxHide.gt-md id="holder" >
+  <div  id="cartInfo" class="section">
+    <h1>
+      Your Order
+    </h1>
+    <blu-cart-table></blu-cart-table>
+  </div>
+
+  <!-- <div style="display: none" id="payment" class="section">
+    <div id="title">
+      Payment
+    </div>
+    Card Number<br>
+    <input [(ngModel)]="cardNumber" type="text"><br> Expireation Month<br>
+    <input [(ngModel)]="expiryMonth" type="number"><br> Expireation Year<br>
+    <input [(ngModel)]="expiryYear" type="number"><br> CVC
+    <br>
+    <input [(ngModel)]="cvc" type="number">
+    <br> {{message}}<br>
+    <button (click)="getToken()">Send info to Stripe</button>
+  </div> -->
+  <div id="customerInfo" class="section">
+    <h1>
+      Your Info
+    </h1>
+    <form id="infoForm" #infoForm="ngForm">
+      <div>
+        Name<br>
+        <input placeholder="John Smith" name="name" [(ngModel)]="customer.name" type="text" required>
+      </div>
+      <div>
+        Phone Number<br>
+        <input placeholder="(555)-987-1234" name="phone" [textMask]="{mask: aPhoneMask}" [(ngModel)]="customer.phone" type="text"
+          required>
+      </div>
+      <div> Email <br>
+        <input name="email" placeholder="Email@website.com" [textMask]="{mask: aEmailMask}" [(ngModel)]="customer.email" type="text"
+          required>
+      </div>
+      <div>Place of Delivery <br>
+        <textarea placeholder="Address, landmark, or anywhere else on UBC" name="deliveryLocation" rows="5" cols="75" [(ngModel)]="deliveryLocation"
+          type="text" required></textarea>
+      </div>
+      <div>
+        Payment Type <br>
+        <button [ngClass]="{selected: selectedPaymentType === 'cash'}" (click)="selectedPaymentType = 'cash'" class="paymentOptions">Cash</button>
+        <button [ngClass]="{selected: selectedPaymentType === 'etransfer'}" (click)="selectedPaymentType = 'etransfer'" class="paymentOptions">E Transfer</button>
+      </div>
+    </form>
+
+  </div>
+  <div class="section">
+    <h1>
+      Finalize
+    </h1>
+    <h2>
+      Fees
+    </h2>
+    <div>
+      There is a flat $4.50 fee for all deliveries from Campus and University Village locations. For deliveries from Westbrook village, there is an additional ¢50 charge. If you are ordering from more than 1 location (ie. Mcdonalds & A&W), there is an additional $2.00 charge for each added location.
+    </div>
+    <h2>
+      Final Price
+    </h2>
+    <div>
+      The final price of your order will be texted to you by your biker as soon as the the order has been picked up! Please have your cash or E-Transfer ready.
+    </div>
+    <h2>
+      Communication
+    </h2>
+    <div> 
+      In order to coordinate your order we will contact you on the number you have provided. After pressing the confirm button we will send you a text to confirm the order. Please be ready!
+    </div>
+    <div>
+      <button *ngIf="!saving" id="confirm" (click)="confirmOrder()" [disabled]="infoForm.form.invalid || !selectedPaymentType">Confirm Order</button>
+      <div *ngIf="saving" id="saving">Saving...</div>
+    </div>
+  </div>
 </div>
