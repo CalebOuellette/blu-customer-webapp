@@ -5,8 +5,8 @@
 
 </div> -->
 
-<div [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer" fxLayout.gt-md="row" fxLayout.lt-lg="column">
-  <div fxFlex.gt-md="40" fxFlex.lt-lg="100" style="width: 100%;">
+<div fxHide.lt-lg [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer" fxLayout.gt-md="row">
+  <div fxFlex.gt-md="40" style="width: 100%;">
     <div id="parterneredTitle">
       Parternered Restaurants
     </div>
@@ -20,7 +20,38 @@
       </div>
     </div>
   </div>
-  <div fxFlex.gt-md="40" fxFlex.lt-lg="100" style="width: 100%;">
+  <div fxFlex.gt-md="40" style="width: 100%;">
+    <div class="option" id="everythingElse">
+      <div class="locationName">
+        All Other Locations
+      </div>
+      <div class="about">
+        Anything you need on campus we got you covered.
+      </div>
+
+      <div class="buttonHolder">
+        <button (click)="orderNow('everythingElse')">Order now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div fxHide.gt-md [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" >
+  <div style="width: 100%;">
+    <div id="parterneredTitle">
+      Parternered Restaurants
+    </div>
+    <div *ngFor="let location of locations | async" class="option" id="parternered">
+
+      <div>
+        <img style="   width: 200px; " [src]="location.logoUrl">
+        <div class="buttonHolder">
+          <button (click)="orderNow(location.$key)">Order now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div  style="width: 100%;">
     <div class="option" id="everythingElse">
       <div class="locationName">
         All Other Locations
