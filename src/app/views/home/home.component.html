@@ -1,48 +1,63 @@
 <app-cart style="z-index: 1; position: relative;" [showingCart]="false">
 </app-cart>
 
-<!-- <div class="mercanteBack"> 
 
-</div> -->
 
-<div fxHide.lt-lg [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer" fxLayout.gt-md="row">
-  <div fxFlex.gt-md="40" style="width: 100%;">
-    <div id="parterneredTitle">
+<div fxHide.gt-sm  class="mercanteBack-sm">
+  <img src="/assets/everythingelse.png">
+  <div id="shade">
+
+  </div>
+</div>
+
+
+
+<div fxHide.lt-md  class="mercanteBack">
+  <img src="/assets/background_mercante.png">
+</div>
+
+<div  fxHide.lt-md class="everythingElseBack">
+  <img src="/assets/everythingelse.png">
+</div>
+
+<div fxHide.lt-md [ngClass.gt-sm]="{cartShowingSearch : cart.orderItems.length > 0}" class="outer" fxLayout.gt-sm="row">
+  <div fxFlex.gt-sm="50" style="width: 100%;">
+    <div style="padding-right: 30px; text-align: right;" class="title">
       Parternered Restaurants
     </div>
     <div *ngFor="let location of locations | async" class="option" id="parternered">
 
-      <div>
-        <img style="   width: 200px; " [src]="location.logoUrl">
+      <div style="text-align: right; ">
+        <img style="   max-width: 300px; " [src]="location.logoUrl">
         <div class="buttonHolder">
           <button (click)="orderNow(location.$key)">Order now</button>
         </div>
       </div>
     </div>
   </div>
-  <div fxFlex.gt-md="40" style="width: 100%;">
+  <div fxFlex.gt-sm="50" style="width: 100%;">
+    <div style="padding-left: 30px; text-align: left;" class="title">
+      All Other Locations
+    </div>
     <div class="option" id="everythingElse">
       <div class="locationName">
-        All Other Locations
-      </div>
-      <div class="about">
-        Anything you need on campus we got you covered.
+
       </div>
 
-      <div class="buttonHolder">
+
+      <div style="text-align: left; left: 0;" class="buttonHolder">
         <button (click)="orderNow('everythingElse')">Order now</button>
       </div>
     </div>
   </div>
 </div>
 
-<div fxHide.gt-md [ngClass.gt-md]="{cartShowingSearch : cart.orderItems.length > 0}" >
+<div fxHide.gt-sm [ngClass.gt-sm]="{cartShowingSearch : cart.orderItems.length > 0}">
   <div style="width: 100%;">
-    <div id="parterneredTitle">
+    <div class="title">
       Parternered Restaurants
     </div>
     <div *ngFor="let location of locations | async" class="option" id="parternered">
-
       <div>
         <img style="   width: 200px; " [src]="location.logoUrl">
         <div class="buttonHolder">
@@ -51,13 +66,10 @@
       </div>
     </div>
   </div>
-  <div  style="width: 100%;">
+  <div style="width: 100%;">
     <div class="option" id="everythingElse">
-      <div class="locationName">
+      <div class="title">
         All Other Locations
-      </div>
-      <div class="about">
-        Anything you need on campus we got you covered.
       </div>
 
       <div class="buttonHolder">
