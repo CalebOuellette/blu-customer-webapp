@@ -20,7 +20,7 @@
     padding: 10px;
 }
 
-#parterneredTitle{
+.title{
        text-align: center;
         font-weight: bold;
         font-size: 24px;
@@ -85,3 +85,36 @@
     }
 }
 
+
+
+.mercanteBack-sm{
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    overflow: hidden;
+    z-index: -1;
+    img {
+        position: absolute; 
+        top: 0;         
+        right: 0; 
+        left: 0;
+        bottom: 0; 
+        margin: auto; 
+        min-width: 50%;
+        min-height: 50%;
+    }
+
+
+}
+
+
+#shade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.40);
+    height: 100vh;
+}

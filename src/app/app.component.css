@@ -56,3 +56,10 @@ a{
     text-decoration: none;
     color: #FFFFFF;
 }
+
+.message{
+    background-color: rgba(0, 0, 0, 0.40);
+    font-weight: 500; 
+    font-size: 20px; 
+    text-align: center;
+}
