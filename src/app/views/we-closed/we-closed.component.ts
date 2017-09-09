@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AppSettingsProps, AppSettings} from '../../../../blu-classes';
+
 @Component({
   selector: 'blu-we-closed',
   templateUrl: './we-closed.component.html',
@@ -7,10 +10,13 @@ import { Router } from '@angular/router';
 })
 export class WeClosedComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public fireDb: AngularFireDatabase, public router: Router) { }
+
+  public settings: FirebaseObjectObservable<AppSettings>;
 
   ngOnInit() {
-     this.router.navigate(["coming-soon"]);
+    this.settings = this.fireDb.object(AppSettings.dbAddress);
   }
+  
 
 }
