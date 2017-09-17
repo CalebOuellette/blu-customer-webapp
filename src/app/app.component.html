@@ -1,23 +1,37 @@
 <div id="logo">
-  <img  routerLink="/home" id="logo-img" src="assets/logo_b_sm.png">
-  <span  routerLink="/home" class="tlink" style="margin-left: 20px;">
+  <div style="    display: flex;     align-items: center;">
+    <img routerLink="/home" id="logo-img" src="assets/logo_b_sm.png">
+    <span routerLink="/home" class="tlink" style="margin-left: 20px;">
     Home
   </span>
-</div>
+    <span routerLink="/faq" class="tlink" style="margin-left: 20px;">
+    FAQ
+  </span>
+    <span routerLink="/employment" class="tlink" style="margin-left: 20px;">
+    Employment
+  </span>
+  </div>
 
+</div>
+<!-- <div class="message">
+  JUMPSTART PROMOTION! All deliveries to first year residences are $3.50 until SEPTEMBER 1st
+</div> -->
 <router-outlet></router-outlet>
 
 
 <div class="footer">
-  <div class="lnk" routerLink="/about">
+  <!-- <div class="lnk" routerLink="/about">
     About
+  </div> -->
+  <div class="lnk">
+    <a href="https://www.facebook.com/BluDelivery/"> Facebook</a>
   </div>
-  <div class="lnk" routerLink="/faq">
-    FAQ
+  <div class="lnk">
+    <a href="https://www.instagram.com/bludelivery/"> Instagram</a>
   </div>
 
 </div>
 
 
 <div id="background">
-  </div>
+</div>

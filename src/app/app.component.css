@@ -11,7 +11,8 @@
 }
 
 #logo{
-        margin: 30px;
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.40);
         display: flex;
         align-items: center;
 }
@@ -43,9 +44,22 @@
 
 .tlink{
     user-select: none;
-    cursor: pointer
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .tlink:hover{
     text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.message{
+    background-color: rgba(0, 0, 0, 0.40);
+    font-weight: 500; 
+    font-size: 20px; 
+    text-align: center;
 }

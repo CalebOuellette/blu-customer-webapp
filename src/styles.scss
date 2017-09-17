@@ -24,8 +24,11 @@ Input{
   box-sizing: border-box;
   width: 360px;
   height: 45px;
+  font-family: 'Montserrat', sans-serif;
 }
-
+Input::input-placeholder{
+  font-family: 'Montserrat', sans-serif;
+}
 
 
 
@@ -40,6 +43,7 @@ button{
   width: 100px;
   font-weight: 700;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button:disabled,
@@ -73,14 +77,45 @@ textarea{
   overflow: auto;
   outline: none;
   box-shadow: none;
-  background-color: #E8E8E8;
-  border: 1px solid #E8E8E8;
+ // background-color: #E8E8E8;
+  border: 1px solid #ccc;
   resize: none;
-
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  padding: 12px 20px;  
+  font-family: 'Montserrat', sans-serif;
 }
-
+textarea::input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+  }
 
 .cartShowingSearch{
   width: calc(100% - 300px) !important;
 }
 
+
+.l{
+  color: #FFFFFF;
+  font-weight: Bold;
+  font-size: 48px;
+}
+.s{
+  color: #F2C94C;
+  font-weight: Bold;
+  font-size: 24px;
+}
+
+.outer{
+  min-height: calc(100vh - 215px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phoneFix{
+  height: 200vh;
+}
+
+.phoneFixFour{
+  height: 400vh;
+}
